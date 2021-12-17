@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
 )
 
 func main() {
@@ -16,15 +17,23 @@ func main() {
 
 	scanner := bufio.NewScanner(file)
 	// optionally, resize scanner's capacity for lines over 64K, see next example
+	count := 0
+	var intPointer *int
 	for scanner.Scan() {
-		fmt.Println(scanner.Text())
+		intVar, _ := strconv.Atoi(scanner.Text())
+		if intPointer != nil && intVar > *intPointer {
+			count++
+		}
+		intPointer = &intVar
+		// if prevX == nil {
+
+		// }
+		//fmt.Println(scanner.Text())
 	}
 
 	if err := scanner.Err(); err != nil {
 		log.Fatal(err)
 	}
-}
 
-func Run() {
-	fmt.Println("All Users")
+	fmt.Println(count)
 }
