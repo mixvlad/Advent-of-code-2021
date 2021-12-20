@@ -146,7 +146,3 @@ func remove(s [][][]bnum, i int) [][][]bnum {
 	s[i] = s[len(s)-1]
 	return s[:len(s)-1]
 }
-
-func second_part() {
-
-}
