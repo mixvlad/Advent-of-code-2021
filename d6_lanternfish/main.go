@@ -40,7 +40,7 @@ func main() {
 
 	scanner := bufio.NewScanner(file)
 
-	fishList := map[int]int{0: 0, 1: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+	fishList := make([]int, 9)
 
 	// read all horizontal and vertical lines
 	for scanner.Scan() {
@@ -74,8 +74,8 @@ func main() {
 	fmt.Println(summ)
 }
 
-func calcFishes(fishes map[int]int) (res map[int]int) {
-	res = map[int]int{0: 0, 1: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+func calcFishes(fishes []int) (res []int) {
+	res = make([]int, len(fishes))
 
 	for i := 0; i < len(fishes); i++ {
 		if i == 0 {
