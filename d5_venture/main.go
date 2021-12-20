@@ -9,11 +9,6 @@ import (
 	"strings"
 )
 
-func intersect(l1 line, l2 line, c chan int) {
-
-	c <- 1
-}
-
 func main() {
 	file, err := os.Open("./input.txt")
 	if err != nil {
@@ -110,8 +105,4 @@ func strArrToIntArr(strArr []string) (intArr []int) {
 
 type line struct {
 	x1, y1, x2, y2 int
-}
-
-func secondPart() {
-
 }
